@@ -26,7 +26,8 @@
 
         <!-- Title -->
         <title>
-Simplify - pelican tag        </title>
+    Search &ndash; Simplify
+        </title>
         
         <!-- Icon -->
         <link rel="shortcut icon" href="https://smadusankab.github.io/favicon.ico" type="image/x-icon">
@@ -57,6 +58,7 @@ Simplify - pelican tag        </title>
         <!--
         <link rel="stylesheet" href="https://smadusankab.github.io/theme/extra/admonition.min.css">
         -->
+            <link rel="stylesheet" href="https://smadusankab.github.io/theme/tipuesearch/tipuesearch.min.css">
         <link rel="stylesheet" href="https://smadusankab.github.io/theme/style.css">
 
         <!-- Google Analytics -->
@@ -151,10 +153,6 @@ ga('send', 'pageview');
                 </li>
             </ul>
 
-            <!-- Search form -->
-            <form class="form-inline text-center" action="https://smadusankab.github.io/search.html">
-                <input class="form-control w-100 bg-dark text-light text-center border-0 p-2" type="text" name="q" pattern=".{3,}" title="At least 3 characters" required="" placeholder="Type here to search" aria-label="Search">
-            </form>
 
             <!-- Social links -->
             <ul class="navbar-nav text-center">
@@ -200,8 +198,16 @@ ga('send', 'pageview');
         <!-- Header -->
         <header class="bg-dark text-light shadow-sm pt-3 pb-2">
     <div class="container">
-        <h1 id="Simplify">Simplify</h1>
-        <p style="font-size: larger; color: orange;">A simple theme for blog, powered by Bootstrap and Pelican</p>
+        <div class="row">
+            <div class="col-8">
+                <h3 id="Search in Simplify" style="color: orange;">Search in Simplify</h3>
+            </div>
+            <div class="col-4 small" style="margin-top: 0.5rem;">
+                    <div class="text-right mb-2 small" style="height: 26px">
+                        <div class="addthis_inline_share_toolbox"></div>
+                    </div>
+            </div>
+        </div>
     </div>
         </header>
 
@@ -209,57 +215,24 @@ ga('send', 'pageview');
         <main class="py-3">
                 <div class="container">
                     <!-- Sharing -->
-                        <div class="text-right mb-2 small" style="height: 26px">
-                            <div class="addthis_inline_share_toolbox"></div>
-                        </div>
 
                     <!-- Content -->
-    <!-- List of article -->
-        <div class="card mb-2 shadow-sm">
-            <div class="card-body">
-                <h5 class="card-title" style="margin-bottom: 0;">
-                    <a href="https://smadusankab.github.io/blog-post-1.html">Post&nbsp;1</a>
-                </h5>
-                <span class="small">by <a href="https://smadusankab.github.io/author/shirantha-madusanka.html">Shirantha Madusanka</a>, post on <span class="text-success">Nov 30, 2023</span></span>
-                <p>This is the blog post&nbsp;1</p>
-                <div class="flex-row mx-auto mt-3 small">
-                    <div class="float-left">
-                            <span class="card-link text-secondary" title="~31 words">Read in 1 mins</span>
-                            <span class="card-link"><a href="https://smadusankab.github.io/blog-post-1.html#disqus_thread"></a></span>
-                    </div>
-                    <div class=" float-right">
-                        <a class="badge badge-success" href="https://smadusankab.github.io/category/python.html">python</a>
-                            <a class="badge badge-info" href="https://smadusankab.github.io/tag/pelican.html">pelican</a>
-                            <a class="badge badge-info" href="https://smadusankab.github.io/tag/publishing.html">publishing</a>
-                    </div>
-                </div>
-            </div>
+    <!-- Tipue Search -->
+    <form>
+        <div class="tipue_search_group">
+            <input type="text" name="q" id="tipue_search_input" pattern=".{3,}" title="At least 3 characters" required>
+            <button type="submit" class="tipue_search_button">
+                <div class="tipue_search_icon">&#9906;</div>
+            </button>
         </div>
-        <div class="card mb-2 shadow-sm">
-            <div class="card-body">
-                <h5 class="card-title" style="margin-bottom: 0;">
-                    <a href="https://smadusankab.github.io/blog-post-2.html">Post&nbsp;2</a>
-                </h5>
-                <span class="small">by <a href="https://smadusankab.github.io/author/shirantha-madusanka.html">Shirantha Madusanka</a>, post on <span class="text-success">Nov 30, 2023</span></span>
-                <p>This is the blog post&nbsp;2</p>
-                <div class="flex-row mx-auto mt-3 small">
-                    <div class="float-left">
-                            <span class="card-link text-secondary" title="~7 words">Read in 1 mins</span>
-                            <span class="card-link"><a href="https://smadusankab.github.io/blog-post-2.html#disqus_thread"></a></span>
-                    </div>
-                    <div class=" float-right">
-                        <a class="badge badge-success" href="https://smadusankab.github.io/category/python.html">python</a>
-                            <a class="badge badge-info" href="https://smadusankab.github.io/tag/pelican.html">pelican</a>
-                            <a class="badge badge-info" href="https://smadusankab.github.io/tag/publishing.html">publishing</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    </form>
 
-    <!-- Pagination -->
-<div class="pagination px-2">
-</div>
+    <div id="tipue_search_content"></div>
+
     <!-- Google Adsense -->
+
+    <!-- Google Search -->
+ 
                 </div>
         </main>
 
@@ -286,6 +259,14 @@ ga('send', 'pageview');
     <!--
     <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
     -->
+        <script type="text/javascript" src="https://smadusankab.github.io/theme/tipuesearch/tipuesearch.min.js"></script>
+        <script type="text/javascript" src="https://smadusankab.github.io/theme/tipuesearch/tipuesearch.cfg.js"></script>
+        <script src="https://smadusankab.github.io//tipuesearch_content.js"></script>
+        <script>
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+        </script>
     <script type="text/javascript" src="https://smadusankab.github.io/theme/style.js"></script>
 
     <!-- Sharing -->
