@@ -1,80 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Profile</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-        body, html {
+        #game-container,
+        #profile-container {
+            text-align: center;
+            padding: 30px;
+            color: #fff
+        }
+
+        .social-icons a,
+        a {
+            text-decoration: none
+        }
+
+        body,
+        html {
             margin: 0;
             padding: 0;
-            overflow: hidden;
-            font-family: 'Arial', sans-serif;
-            background-color: #232323;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+            height: 100%;
+            font-family: Arial, sans-serif
         }
 
-        #content-container {
+        #container {
             display: flex;
-            height: 100vh;
+            height: 100vh
         }
 
-        .column {
+        #profile-container {
             flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            padding: 20px;
-            box-sizing: border-box;
-            text-align: center;
-            color: #fff;
+            background-color: #180129
         }
 
         #profile-picture {
             border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
+            width: 140px;
+            height: 140px;
+            object-fit: cover
         }
-
-        #game-container {
-            background-color: #ffffff;
-            height: 100%;
-            color: #333;
-        }
-
-        #gameCanvas {
-            border: 2px solid #333;
-            width: 80%; /* Adjust the size as needed */
-            height: 300px; /* Adjust the size as needed */
-        }
-
-        .social-icons {
-            margin-top: 10px;
-        }
-
-        .social-icons a {
-            display: inline-block;
-            margin-right: 10px;
-            color: #fff;
-            text-decoration: none;
-            font-size: 24px;
-        }
-
-        #profile-container {
-            background-color: #333;
-            height: 100%;
-            position: relative;
-            overflow: hidden;
-        }
-
 
         #background-animation {
             position: absolute;
@@ -83,310 +51,156 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: 0;
+            z-index: 0
+        }
+
+        #game-container {
+            flex: 1;
+            background-color: #363636
+        }
+
+        #gameCanvas {
+            border-left: 10px dashed #fff;
+            border-right: 10px dashed #fff;
+            width: 60%;
+            margin: auto;
+            height: 70%;
+            background-color: #252a2c
+        }
+
+        #hardness-selector {
+            margin-bottom: 2em
+        }
+
+        .social-icons {
+            margin-top: 10px
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin-right: 10px;
+            color: #fff;
+            font-size: 24px
         }
 
         a {
             color: #0366d6;
-            text-decoration: none;
-            font-weight: bold;
+            font-weight: 700
         }
 
         a:hover {
-            text-decoration: underline;
+            text-decoration: underline
         }
 
         ul {
             list-style-type: none;
-            padding: 0;
+            padding: 0
         }
 
         li {
-            margin-bottom: 5px;
+            margin-bottom: 5px
         }
 
         h2 {
-            margin-top: 5px;
+            margin-top: 5px
         }
 
-        @media (max-width: 600px) {
-            .column {
-                order: 2; /* Change the order of the columns on mobile */
-                text-align: center;
+        @media (max-width:767px) {
+            #container {
+                flex-direction: column
+            }
+
+            #game-container,
+            #profile-container {
+                flex: 1
+            }
+
+            #game-instructions {
+                margin-bottom: 24em
             }
         }
-
     </style>
 </head>
+
 <body>
-    <div id="content-container">
-        <div id="profile-container" class="column">
-            <img id="profile-picture" src="https://i1.rgstatic.net/ii/profile.image/1118664002666496-1643721690201_Q128/Shirantha-Madusanka.jpg" alt="Profile Picture">
-            
+    <div id="container">
+        <div id="profile-container">
+            <img id="profile-picture"
+                src="https://i1.rgstatic.net/ii/profile.image/1118664002666496-1643721690201_Q128/Shirantha-Madusanka.jpg"
+                alt="Profile Picture">
+
             <h1>Hello, I'm Shirantha Madusanka 👋</h1>
 
             <h2>About Me</h2>
-            <p>I am a passionate software developer with over 4 years of experience specializing in web-based application development. My expertise lies in Python and related frameworks, where I bring innovative solutions to life.</p>
-        
+            <p>I am a passionate software developer with over 4 years of experience specializing in web-based
+                application development. My expertise lies in Python and related frameworks, where I bring innovative
+                solutions to life.</p>
+
             <h2>Skills</h2>
             <ul>
                 <li><strong>Languages:</strong>Python</li>
                 <li><strong>Web Development:</strong> FastAPI, Flask, Connexion</li>
                 <li><strong>Version Control:</strong> Git, GitHub, AzureDevops</li>
                 <li><strong>Database:</strong> SQL, MongoDB</li>
-                <li><strong>Tools:</strong> Docker, Kubernetes, VS Code</li>
+                <li><strong>Tools:</strong> Docker, Kubernetes, Azure function, VS Code</li>
             </ul>
-        
+
             <div class="social-icons">
                 <a href="https://github.com/SmadusankaB" target="_blank" title="GitHub Profile">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/shirantha-madusanka-888713108/" target="_blank" title="LinkedIn Profile">
+                <a href="https://www.linkedin.com/in/shirantha-madusanka-888713108/" target="_blank"
+                    title="LinkedIn Profile">
                     <i class="fab fa-linkedin"></i>
                 </a>
             </div>
-            <!-- <canvas id="background"></canvas> -->
+
             <canvas id="background-animation"></canvas>
         </div>
 
-        <div id="game-container" class="column">
+        <div id="game-container">
+
             <canvas id="gameCanvas"></canvas>
+
+            <div id="hardness-selector">
+                <label for="hardness">Select Hardness:</label>
+                <select id="hardness" onchange="updateHardness()">
+                    <option value="60">Easy</option>
+                    <option value="40" selected>Medium</option>
+                    <option value="20">Hard</option>
+                </select>
+            </div>
+
             <div id="game-instructions">
                 <h2>Game Instructions</h2>
-                <p>Use the arrow keys to navigate the car and avoid obstacles on the road.</p>
-                <p>Score points by successfully navigating through obstacles.</p>
-                <p>If your car collides with an obstacle, a confirmation will appear to start a new round.</p>
+                <p>Press Space key to start the challenge. Use the arrow keys to navigate the car and avoid obstacles on
+                    the road.
+                    Score points by successfully navigating through obstacles.
+                    If your car collides with an obstacle, a confirmation will appear to start a new round with higher
+                    speed.</p>
             </div>
         </div>
     </div>
 
     <script>
-        const canvasAnimation = document.getElementById('background-animation');
-        const ctx = canvasAnimation.getContext('2d');
-        canvasAnimation.width = window.innerWidth;
-        canvasAnimation.height = window.innerHeight;
-    
-        const particles = [];
-        let mouseX = 0;
-        let mouseY = 0;
-    
-        window.addEventListener('mousemove', (event) => {
-            mouseX = event.clientX;
-            mouseY = event.clientY;
-        });
-    
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvasAnimation.width;
-                this.y = Math.random() * canvasAnimation.height;
-                this.size = Math.random() * 5 + 1;
-                this.speedX = Math.random() * 3 - 1.5;
-                this.speedY = Math.random() * 3 - 1.5;
-            }
-    
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-                if (this.size > 0.2) this.size -= 0.1;
-    
-                // Mouse influence
-                const dx = this.x - mouseX;
-                const dy = this.y - mouseY;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-                if (distance < 50) {
-                    this.size += 0.3;
-                }
-            }
-    
-            draw() {
-                ctx.fillStyle = 'rgba(255,255,255,0.8)';
-                ctx.strokeStyle = 'rgba(255,255,255,0.8)';
-                ctx.lineWidth = 2;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-                ctx.stroke();
-            }
+        const canvasAnimation = document.getElementById('background-animation'); const ctx = canvasAnimation.getContext('2d'); canvasAnimation.width = window.innerWidth; canvasAnimation.height = window.innerHeight; const particles = []; let mouseX = 0; let mouseY = 0; window.addEventListener('mousemove', (event) => { mouseX = event.clientX; mouseY = event.clientY }); class Particle {
+            constructor() { this.x = Math.random() * canvasAnimation.width; this.y = Math.random() * canvasAnimation.height; this.size = Math.random() * 5 + 1; this.speedX = Math.random() * 3 - 1.5; this.speedY = Math.random() * 3 - 1.5 }
+            update() { this.x += this.speedX; this.y += this.speedY; if (this.size > 0.2) this.size -= 0.1; const dx = this.x - mouseX; const dy = this.y - mouseY; const distance = Math.sqrt(dx * dx + dy * dy); if (distance < 50) { this.size += 0.3 } }
+            draw() { ctx.fillStyle = 'rgba(255,255,255,0.8)'; ctx.strokeStyle = 'rgba(255,255,255,0.8)'; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill(); ctx.stroke() }
         }
-    
-        function createParticles() {
-            for (let i = 0; i < 100; i++) {
-                particles.push(new Particle());
-            }
-        }
-    
+        function createParticles() { for (let i = 0; i < 100; i++) { particles.push(new Particle()) } }
         function animate() {
-            ctx.clearRect(0, 0, canvasAnimation.width, canvasAnimation.height);
-            for (let i = 0; i < particles.length; i++) {
-                particles[i].update();
-                particles[i].draw();
-            }
-            requestAnimationFrame(animate);
+            ctx.clearRect(0, 0, canvasAnimation.width, canvasAnimation.height); for (let i = 0; i < particles.length; i++) { particles[i].update(); particles[i].draw() }
+            requestAnimationFrame(animate)
         }
-    
-        window.addEventListener('resize', () => {
-            canvasAnimation.width = window.innerWidth;
-            canvasAnimation.height = window.innerHeight;
-            createParticles();
-        });
-    
-        createParticles();
-        animate();
+        window.addEventListener('resize', () => { canvasAnimation.width = window.innerWidth; canvasAnimation.height = window.innerHeight; createParticles() }); createParticles(); animate()
     </script>
 
 
-
     <script>
-        const canvas = document.getElementById('gameCanvas');
-        const ctxGame = canvas.getContext('2d');
-    
-        const car = {
-            x: canvas.width / 2 - 20,
-            y: canvas.height - 60,
-            width: 40,
-            height: 60,
-            speed: 150, // Adjust the speed as needed
-        };
-    
-        const obstacles = [];
-        const obstacleSpeed = 100; // Adjust the speed as needed
-        const obstacleFrequency = 100; // Lower values mean more frequent obstacles
-    
-        let score = 0;
-        let lastTime = 0;
-    
-        function drawCar() {
-            ctxGame.fillStyle = "#362e2e";
-            ctxGame.fillRect(car.x, car.y, car.width, car.height);
-        }
-    
-        function drawObstacles() {
-            ctxGame.fillStyle = "#6e6e82";
-            for (const obstacle of obstacles) {
-                ctxGame.fillRect(obstacle.x, obstacle.y, obstacle.width, obstacle.height);
-            }
-        }
-    
-        function drawScore() {
-            ctxGame.fillStyle = "#333";
-            ctxGame.font = "20px Arial";
-            ctxGame.fillText("Score: " + score, 10, 30);
-        }
-    
-        function clearCanvas() {
-            ctxGame.clearRect(0, 0, canvas.width, canvas.height);
-        }
-    
-        function update(dt) {
-            // Update obstacles
-            for (const obstacle of obstacles) {
-                obstacle.y += obstacleSpeed * dt;
-    
-                // Check for collisions
-                if (
-                    car.x < obstacle.x + obstacle.width &&
-                    car.x + car.width > obstacle.x &&
-                    car.y < obstacle.y + obstacle.height &&
-                    car.y + car.height > obstacle.y
-                ) {
-                    // Collision detected
-                    confirmNewRound();
-                }
-    
-                // Remove obstacles that are out of the canvas
-                if (obstacle.y > canvas.height) {
-                    score++;
-                    obstacles.splice(obstacles.indexOf(obstacle), 1);
-                }
-            }
-    
-            // Generate new obstacles
-            if (Math.random() < 1 / obstacleFrequency) {
-                const obstacle = {
-                    x: Math.random() * (canvas.width - 30),
-                    y: -30,
-                    width: 30,
-                    height: 30
-                };
-                obstacles.push(obstacle);
-            }
-    
-            // Update car position based on arrow key state
-            if (keyState.ArrowUp && car.y > 0) {
-                car.y -= car.speed * dt;
-            }
-            if (keyState.ArrowDown && car.y < canvas.height - car.height) {
-                car.y += car.speed * dt;
-            }
-            if (keyState.ArrowLeft && car.x > 0) {
-                car.x -= car.speed * dt;
-            }
-            if (keyState.ArrowRight && car.x < canvas.width - car.width) {
-                car.x += car.speed * dt;
-            }
-        }
-    
-        function confirmNewRound() {
-            const confirmResult = confirm("Game Over! Your score: " + score + "\nDo you want to start a new round?");
-            if (confirmResult) {
-                startNewRound();
-            }
-        }
-    
-        function startNewRound() {
-            score = 0;
-            obstacles.length = 0; // Clear obstacles array
-        }
-    
-        function gameLoop(time) {
-            const dt = (time - lastTime) / 1000; // Convert to seconds
-            lastTime = time;
-    
-            clearCanvas();
-            update(dt);
-            drawCar();
-            drawObstacles();
-            drawScore();
-            requestAnimationFrame(gameLoop);
-        }
-    
-        const keyState = {};
-    
-        window.addEventListener('keydown', (e) => {
-            keyState[e.key] = true;
-        });
-    
-        window.addEventListener('keyup', (e) => {
-            keyState[e.key] = false;
-        });
-    
-        canvas.width = document.getElementById('game-container').offsetWidth;
-        canvas.height = 300; // Set a fixed height or adjust dynamically
-    
-        function handleResize() {
-            canvas.width = document.getElementById('game-container').offsetWidth;
-        }
-    
-        window.addEventListener('resize', handleResize);
-    
-        function setupEventListeners() {
-            window.addEventListener('keydown', handleKeydown);
-            window.addEventListener('keyup', handleKeyup);
-        }
-    
-        function handleKeydown(e) {
-            // You can add additional logic if needed
-        }
-    
-        function handleKeyup(e) {
-            // You can add additional logic if needed
-        }
-    
-        setupEventListeners();
-        gameLoop(); 
-    
-    </script>  
-
+        const canvas=document.getElementById("gameCanvas"),ctxGame=canvas.getContext("2d"),gameInstructions=document.getElementById("game-instructions");let isGameStarted=!1,isGameOver=!1;const car={x:canvas.width/2-20,y:canvas.height-60,width:40,height:60,speed:300},obstacles=[];let obstacleSpeed=100,obstacleFrequency=50;function updateHardness(){let e=document.getElementById("hardness");obstacleFrequency=parseInt(e.value)}let score=0,lastTime=0;function drawCar(){ctxGame.fillStyle="#73f0c4",ctxGame.fillRect(car.x,car.y,car.width,car.height)}function drawObstacles(){for(let e of(ctxGame.fillStyle="#bb73f0",obstacles))ctxGame.fillRect(e.x,e.y,e.width,e.height)}function drawScore(){ctxGame.fillStyle="#fff",ctxGame.font="20px Arial",ctxGame.fillText("Score: "+score,10,30)}function clearCanvas(){ctxGame.clearRect(0,0,canvas.width,canvas.height)}function update(e){if(!isGameOver){for(let t of obstacles)t.y+=obstacleSpeed*e,car.x<t.x+t.width&&car.x+car.width>t.x&&car.y<t.y+t.height&&car.y+car.height>t.y&&confirmNewRound(),t.y>canvas.height&&(score++,obstacles.splice(obstacles.indexOf(t),1));if(console.log(obstacleFrequency),Math.random()<1/obstacleFrequency){let a={x:Math.random()*(canvas.width-30),y:-30,width:30,height:30};obstacles.push(a)}keyState.ArrowUp&&car.y>0&&(car.y-=car.speed*e),keyState.ArrowDown&&car.y<canvas.height-car.height&&(car.y+=car.speed*e),keyState.ArrowLeft&&car.x>0&&(car.x-=car.speed*e),keyState.ArrowRight&&car.x<canvas.width-car.width&&(car.x+=car.speed*e)}}let collidedPosition=null;function confirmNewRound(){isGameOver=!0;let e=confirm("Game Over! Your score: "+score+"\nDo you want to start a new round?");e&&(collidedPosition&&(car.x=collidedPosition.x,car.y=collidedPosition.y),isGameOver=!1,startNewRound())}function startNewRound(){score=0,obstacles.length=0,collidedPosition={x:car.x,y:car.y},obstacleSpeed+=10,isGameOver=!1,keyState.ArrowUp=!1,keyState.ArrowDown=!1,keyState.ArrowLeft=!1,keyState.ArrowRight=!1,setTimeout(()=>{isGameStarted=!1,collidedPosition=null},1e3)}function gameLoop(e){let t=(e-lastTime)/1e3;lastTime=e,clearCanvas(),update(t),drawCar(),drawObstacles(),drawScore(),requestAnimationFrame(gameLoop)}const keyState={};function handleResize(){canvas.width=document.getElementById("game-container").offsetWidth}function setupEventListeners(){window.addEventListener("keydown",handleKeydown),window.addEventListener("keyup",handleKeyup)}function handleKeydown(e){!isGameOver&&(keyState[e.key]=!0,"ArrowLeft"===e.key&&keyState.ArrowRight&&(keyState.ArrowRight=!1),"ArrowRight"===e.key&&keyState.ArrowLeft&&(keyState.ArrowLeft=!1))}function handleKeyup(e){isGameOver||(keyState[e.key]=!1)}function handleTouchStart(e){e.preventDefault();let t=e.touches[0].clientX,a=window.innerWidth/2;t<a?keyState.ArrowLeft=!0:keyState.ArrowRight=!0}function handleTouchEnd(e){e.preventDefault(),keyState.ArrowLeft=!1,keyState.ArrowRight=!1}function setupEventListeners(){window.addEventListener("keydown",handleKeydown),window.addEventListener("keyup",handleKeyup),window.addEventListener("touchstart",handleTouchStart),window.addEventListener("touchend",handleTouchEnd)}window.addEventListener("keydown",e=>{keyState[e.key]=!0," "!==e.key||isGameStarted||(startNewRound(),isGameStarted=!0,gameLoop())}),window.addEventListener("keyup",e=>{keyState[e.key]=!1}),canvas.width=document.getElementById("game-container").offsetWidth,canvas.height=300,window.addEventListener("resize",handleResize),setupEventListeners();
+    </script>
 
 </body>
+
 </html>
